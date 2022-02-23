@@ -16,9 +16,15 @@ Use App\Http\Controllers\CompanyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Praktikum 2
+
 Route::get('/', [HomeController:: class, 'index']);
 Route::get('/about', [AboutController:: class, 'about']);
-Route::get('/article/{id}', [HomeController:: class, 'articles']);
+Route::get('/article/{id}', [ArticleController:: class, 'articles']);
+
+//Praktikum 3
+
+Route::get('/Halaman-utama', [CompanyController::class, 'halamanUtama']);
 
 Route::prefix('categori')->group(function(){
     Route::get('/marbel-edu-games', [CompanyController::class, 'product1']);
@@ -26,8 +32,9 @@ Route::prefix('categori')->group(function(){
     Route::get('/riri-story-books', [CompanyController::class, 'product3']);
     Route::get('/kolak-kids-song', [CompanyController::class, 'product4']);
 });
-Route::get('/news', [CompanyController::class, 'news1']);
-Route::get('/educa-studio-berbagi', [CompanyController::class, 'news2']);
+
+Route::get('/news/{news}', [CompanyController::class, 'news1']);
+Route::get('/educa-studio-berbagi/{news}', [CompanyController::class, 'news2']);
 
 Route::prefix('categori')->group(function(){
     Route::get('/karir', [CompanyController::class, 'program1']);

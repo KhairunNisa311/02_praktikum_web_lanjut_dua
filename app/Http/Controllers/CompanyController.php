@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
+
+    public function HalamanUtama(){
+        return redirect('https://www.educastudio.com/');
+    }
+
     public function product1(){
         return redirect('https://www.educastudio.com/category/marbel-edu-games');
     }
